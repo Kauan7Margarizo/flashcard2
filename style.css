@@ -1,0 +1,149 @@
+/* Configurações Gerais / Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Barra de Navegação */
+.navbar {
+    background-color: #653b22; /* Tom marrom da imagem */
+    color: #ffffff;
+    padding: 12px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Área Central */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Container dos Cards */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estrutura do Efeito Hover 3D */
+.card {
+    background-color: transparent;
+    width: 260px;
+    height: 420px;
+    perspective: 1000px; /* Cria o efeito 3D ao girar */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+}
+
+/* Revela o verso ao passar o mouse */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta a parte de trás enquanto vira */
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Frente do Card */
+.card-front {
+    background-color: #f0f0f0;
+}
+
+.card-img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.card-text {
+    height: 20px;
+    background-color: #ededed;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: #333;
+    flex-grow: 1;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Verso do Card */
+.card-back {
+    color: white;
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card-back.falso {
+    background-color: #d9534f; /* Cor vermelha para resposta falsa */
+}
+
+.card-back h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.card-back p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
